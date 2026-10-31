@@ -1,0 +1,30 @@
+{
+  "template": "references/template.png",
+  "scale_mm_per_px": 0.0952381,
+  "original_gap_mm": 7.502,
+  "separation_shift_mm": 2.85,
+  "footprint_mm": [
+    147.28,
+    91.105
+  ],
+  "height_mm": 14.0,
+  "shapes": [
+    {
+      "name": "cat",
+      "points": 91,
+      "iou": 0.99887,
+      "width_mm": 62.381,
+      "height_mm": 79.429,
+      "pixel_height": 834.0
+    },
+    {
+      "name": "dog",
+      "points": 101,
+      "iou": 0.998667,
+      "width_mm": 61.238,
+      "height_mm": 79.905,
+      "pixel_height": 839.0
+    }
+  ],
+  "estimated_wall_volume_mm3": 12874.6
+}

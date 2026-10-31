@@ -1,0 +1,17 @@
+---
+description: Outline extraction, mesh checks, and tests
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Geometry code and tests
+
+- Read the template with a threshold of 128 and simplify with `SIMPLIFY_EPSILON_PX` in `outline.py`. Keep per-shape IoU at or above 0.995.
+- Place cutters so the rims stay `FLANGE_CLEARANCE_MM` apart. Do not overlap the flanges to copy the artwork's gap.
+- Mesh checks belong in `mesh.py` and must stay independent of OpenSCAD: volume, a closed edge pairing, and inside/outside samples.
+- A coarse outline must fail the IoU test. That test is the iteration check, so do not delete it or lower the threshold.
+
+```python
+prepared = prepare_cutters()
+assert prepared.shapes[0].iou >= 0.995
+```

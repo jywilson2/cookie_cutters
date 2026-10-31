@@ -1,0 +1,19 @@
+---
+description: Cookie cutter project goals, printer target, and source of truth
+alwaysApply: true
+---
+
+# Cookie cutters
+
+This repository builds printable cookie cutters from `references/template.png`.
+
+- Printer: Bambu Lab H2D, 0.4 mm nozzle. Final artifact: `models/cat_dog_cookie_cutters.3mf` (millimetres).
+- The left silhouette is the cat and the right silhouette is the dog. Each cutter is its own outline. The inner face is the cookie.
+- Everyday cookie size: longest side 80 mm. Wall profile lives in `src/cookie_cutter/profile.py` and `scad/cutter_profile.scad` and must stay identical.
+- Outline agreement is an intersection-over-union of at least 0.995 against the template. Do not relax that gate to make a geometry change pass.
+- After any outline or profile change, run `make generate` and `make test`.
+
+```bash
+make generate
+make test
+```

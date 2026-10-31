@@ -1,0 +1,12 @@
+[project]
+name = "cookie-cutters"
+version = "0.1.0"
+description = "Cat and dog cookie cutters for the Bambu Lab H2D"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "James Y. Wilson" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,18 @@
+---
+description: OpenSCAD cookie-cutter profile and generated outlines
+globs: scad/**/*.scad
+alwaysApply: false
+---
+
+# OpenSCAD models
+
+Units are millimetres. The flange sits on z = 0 and the cutting edge points up, so the part prints without supports.
+
+- Change wall, rim, and height only in `scad/cutter_profile.scad`, then mirror the numbers in `src/cookie_cutter/profile.py`.
+- `scad/outlines.scad` and `scad/cat_dog_cookie_cutters.scad` are generated. Regenerate them; do not hand-edit coordinates.
+- Build a cutter with `cutter(points)`. The polygon is the cookie outline, wound counter-clockwise. `offset()` grows to the outside only.
+
+```scad
+include <cutter_profile.scad>
+cutter(cat_points);
+```
